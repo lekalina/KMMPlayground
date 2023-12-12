@@ -56,6 +56,7 @@ kotlin {
             implementation(libs.koin)
             implementation(libs.koin.compose)
             implementation(libs.koin.test)
+            implementation(libs.datastore)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.native)
