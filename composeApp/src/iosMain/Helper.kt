@@ -3,5 +3,7 @@ import di.platformModule
 import org.koin.core.context.startKoin
 
 fun initKoin(){
-    initKoiniOS()
+    startKoin {
+        modules(appModule())
+    }
 }

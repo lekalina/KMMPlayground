@@ -1,10 +1,11 @@
 package di
 
+import android.content.Context
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
-actual fun platformModule() = module {
+fun platformModule(context: Context) = module {
     single {
-        dataStore(androidContext())
+        dataStore(context)
     }
 }

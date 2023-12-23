@@ -9,8 +9,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import dev.icerock.moko.mvvm.compose.getViewModel
 import dev.icerock.moko.mvvm.compose.viewModelFactory
-import di.appModule
-import org.koin.compose.KoinApplication
 import ui.navigation.BottomNavigation
 import ui.navigation.NavRoute
 import ui.navigation.NavigationVM
@@ -20,11 +18,9 @@ import ui.screens.ImageScreen
 
 @Composable
 fun App() {
-    KoinApplication(application = { modules(appModule()) }) {
-        val navigationVM = getViewModel(Unit, viewModelFactory { NavigationVM() })
-        MaterialTheme {
-            BaseContent(navigationVM)
-        }
+    val navigationVM = getViewModel(Unit, viewModelFactory { NavigationVM() })
+    MaterialTheme {
+        BaseContent(navigationVM)
     }
 }
 
